@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Example</title>
+
+    <!-- jquery and react are already on the page -->
+    <script src="static/jquery/dist/jquery.js"></script>
+    <script src="static/react/react.js"></script>
+    <script src="static/react/react-dom.js"></script>
+
+    <!-- include archive.org's styles (locally cached for this example) -->
+    <link href="static/archive-org/web.css" rel="stylesheet" type="text/css"/>
+    <link href="static/archive-org/archive.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- include component js and css -->
+    <link href="../dist/styles.css" rel="stylesheet" type="text/css"/>
+    <script src="../dist/build.js"></script>
+    <style>
+      html, body { margin:0; padding:0 }
+      #faux-header {
+        height: 50px;
+        width: 100%;
+        margin:0;
+        background-color:black;
+      }
+      #react-entry-point {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 10px;
+      }
+    </style>
+  <body>
+    <div id="faux-header"></div>
+    <div id="react-entry-point"></div>
+    <script>
+      /* Instantiate the component */
+      ReactDOM.render(
+        React.createElement(window.ExampleReactComponent, {}),
+        document.getElementById("react-entry-point")
+      );
+    </script>
+  </body>
+</html>
